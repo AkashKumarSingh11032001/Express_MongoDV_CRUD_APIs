@@ -7,6 +7,6 @@ const router = express.Router();
 //     res.send("Getting Users!");
 // });
 
-router.post('/', createUser)
+router.post("/", createUser);
 
 export default router;

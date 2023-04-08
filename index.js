@@ -3,12 +3,13 @@ import 'dotenv/config';
 import mongoose from 'mongoose';
 import userRoutes from './routes/users.js'
 
-const app = express()
-const PORT = process.env.PORT || 3000 
+const app = express();
+const PORT = process.env.PORT || 3000 ;
 
 // app.get('/',(req,res)=>{
 //     res.send("Hello World")
 // })
+app.use(express.json());
 
 app.use('/api/users', userRoutes);
 
