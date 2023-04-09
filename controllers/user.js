@@ -11,3 +11,15 @@ export const createUser = async (req, res) => {
   }
   // res.send("Creating NEW user");
 };
+
+// get all users
+export const getAllUser = async (req, res) =>{
+  try{
+    const user = await User.find({})
+    res.status(201).json(user);
+  }catch(err){
+    res.json({error:err});
+  }
+}
+
+// get user by id
