@@ -31,3 +31,17 @@ export const getUser = async (req,res) =>{
     res.json({ error: err });
   }
 }
+
+// update user by ID
+export const updateUser = async (req,res) =>{
+  try {
+    const userUpdate = await User.findByIdAndUpdate(
+      req.params.userId,
+      req.body,
+      { new: true }
+    );
+    res.status(200).json(userUpdate);
+  } catch (err) {
+    res.json({ error: err });
+  }
+}
